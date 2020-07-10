@@ -1,0 +1,51 @@
+//font-size
+$fontXXLargeSize: 32px;
+$fontXLargeSize: 24px;
+$fontLargeSize: 18px;
+$fontMediumSize: 14px;
+$FontSmallSize: 12px;
+
+//font-weight
+$regularWeight: 500;
+$boldWeight: 700;
+
+@mixin font($type) {
+  @if ($type == small) {
+    font-size: $FontSmallSize;
+    font-weight: $regularWeight;
+  }
+  @if ($type == medium) {
+    font-size: $fontMediumSize;
+    font-weight: $regularWeight;
+  }
+  @if ($type == mediumBold) {
+    font-size: $fontMediumSize;
+    font-weight: $boldWeight;
+  }
+  @if ($type == large) {
+    font-size: $fontLargeSize;
+    font-weight: $regularWeight;
+  }
+  @if ($type == largeBold) {
+    font-size: $fontLargeSize;
+    font-weight: $boldWeight;
+  }
+  @if ($type == xLarge) {
+    font-size: $fontXLargeSize;
+    font-weight: $boldWeight;
+  }
+  @if ($type == xLargeLight) {
+    font-size: $fontXLargeSize;
+    font-weight: $regularWeight;
+  }
+
+  @if ($type == xxLarge) {
+    font-size: $fontXXLargeSize;
+    font-weight: $boldWeight;
+  }
+  @if ($type == xxLargeLight) {
+    font-size: $fontXXLargeSize;
+    font-weight: $regularWeight;
+  }
+  font-family: $roboto, sans-serif;
+}

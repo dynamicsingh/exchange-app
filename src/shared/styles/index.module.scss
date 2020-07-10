@@ -1,0 +1,43 @@
+@import 'variables.module';
+@import 'mixins.module';
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Roboto&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background: darken($bg-grey, 60%) !important;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-family: $roboto, sans-serif;
+}
+
+input {
+  @include font(xLargeLight);
+  width: 100px;
+  text-align: right;
+  height: 50px;
+  background: transparent;
+  padding-left: 10px;
+  padding-right: 5px;
+  border: none;
+  outline: none;
+  transition: all 0.3s ease-out;
+  color: $dark-grey;
+}
+input::placeholder {
+  @include font(xLargeLight);
+  color: $light-grey-text;
+}
