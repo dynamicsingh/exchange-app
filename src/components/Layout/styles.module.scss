@@ -1,0 +1,11 @@
+@import 'shared/styles/variables.module';
+
+.appContainer {
+  min-width: 360px;
+  position: relative;
+  min-height: 560px;
+  border-radius: 24px;
+  border: 12px solid lighten($black, 15%);
+  background: white;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+}
