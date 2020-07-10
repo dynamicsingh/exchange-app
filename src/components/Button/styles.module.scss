@@ -1,0 +1,25 @@
+@import 'shared/styles/variables.module';
+
+.button {
+  height: 42px;
+  min-width: 120px;
+  text-align: center;
+  outline: none;
+  cursor: pointer;
+  border: none;
+  border-radius: 24px;
+
+  background: $primary;
+  color: $white;
+  &:active,
+  &:hover,
+  &:not(:disabled) {
+    background-color: lighten($primary, 10%);
+    color: darken($white, 10%);
+    cursor: pointer;
+  }
+  &:disabled {
+    background-color: lighten($primary, 25%);
+    cursor: not-allowed;
+  }
+}
