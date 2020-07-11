@@ -1,0 +1,18 @@
+@import 'shared/styles/variables.module';
+@import 'shared/styles/mixins.module';
+
+.container {
+  background: $white;
+  border-radius: 16px;
+  padding: 5px 12px;
+  margin-top: -14px;
+  border: 1px solid $border-grey;
+  color: $link-blue;
+  @include font(medium);
+}
+
+.icon {
+  height: 8px;
+  fill: $link-blue;
+  margin-right: 8px;
+}
