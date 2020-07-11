@@ -11,7 +11,8 @@ interface Props {
 const Exchange: FC<Props> = ({ text }) => {
   return (
     <Layout>
-      <div>Hell</div>
+      <br/><br/>
+      <div>EXCHANGE APP</div>
       <br/><br/>
       <LiveRate fromCurrency={"EUR"} toCurrency={"GBP"} conversionRate={10.1}/>
       <br/><br/>
