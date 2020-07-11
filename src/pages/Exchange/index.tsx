@@ -7,6 +7,7 @@ import {shallowEqual, useDispatch, useSelector} from 'react-redux';
 import { getExchangeRates } from '../../actions/exchangeRateAction';
 import {RootState} from "../../reducers";
 import {ExchangeRate} from "../../models/exchangeRates";
+import {calculateExchangeRate} from "../../shared/utils/exchange";
 
 interface Props {
   text?: string;
@@ -24,6 +25,12 @@ const Exchange: FC<Props> = ({ text }) => {
   );
 
   let rates: ExchangeRate = exchangeRates?.data;
+
+  const exchangeRate: number = calculateExchangeRate(
+    'EUR',
+    'GBP',
+    rates,
+  );
 
   //fetching the live rates every EXCHANGE_RATE_UPDATION_INTERVAL interval
   useEffect(() => {
@@ -45,7 +52,7 @@ const Exchange: FC<Props> = ({ text }) => {
       <div>EXCHANGE APP</div>
       <br />
       <br />
-      <LiveRate fromCurrency={'EUR'} toCurrency={'GBP'} conversionRate={10.1} />
+      <LiveRate fromCurrency={'EUR'} toCurrency={'GBP'} conversionRate={exchangeRate} />
       <br />
       <br />
       <Button>Exchange</Button>
