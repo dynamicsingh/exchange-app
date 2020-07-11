@@ -1,5 +1,6 @@
-import { Pocket} from 'models/pockets';
-import {ExchangeRateResponse} from "models/exchangeRates";
+import { ExchangeRateResponse } from 'models/exchangeRates';
+import { Pocket, PocketContent, PocketInput } from 'models/pockets';
+import { RootState } from 'reducers';
 
 export const exchangeRatesData: { data: ExchangeRateResponse } = {
   data: {
@@ -9,6 +10,12 @@ export const exchangeRatesData: { data: ExchangeRateResponse } = {
   },
 };
 
+export let pocketTransactionPayload: PocketInput = {
+  sourceCurrency: { currency: 'EUR', amount: 10 },
+  destinationCurrency: { currency: 'GBP', amount: 8.96 },
+  rate: 0.8957,
+};
+
 export const pocketData: { data: Pocket } = {
   data: {
     EUR: 900,
@@ -16,8 +23,21 @@ export const pocketData: { data: Pocket } = {
     USD: 300.63,
   },
 };
+
+export const pocketContent: PocketContent = {
+  currency: 'EUR',
+  amount: 2323,
+};
+
 export const error = {
   code: 403,
   message: 'Forbidden',
 };
 
+export const completeState: RootState = {
+  exchangeRates: {
+    loading: false,
+    error: null,
+    data: { ...exchangeRatesData.data.rates, EUR: 1 },
+  },
+};
