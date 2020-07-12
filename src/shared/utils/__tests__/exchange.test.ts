@@ -1,7 +1,9 @@
 import {
-  calculateExchangeRate, getExchangeAmount,
+  calculateExchangeRate,
+  getExchangeAmount,
+  isValidPocketConversion,
 } from '../exchange';
-import { exchangeRatesData } from '../mockData';
+import { exchangeRatesData, pocketContent, pocketData } from '../mockData';
 
 describe('exchange utils', () => {
   it('calculateExchangeRate with all exchangeRates', () => {
@@ -28,4 +30,45 @@ describe('exchange utils', () => {
     ).toEqual(2687.1);
   });
 
+  it('isValidPocketConversion with amount more than in pocket', () => {
+    expect(
+      isValidPocketConversion(
+        { currency: 'GBP', amount: 1000 },
+        pocketContent,
+        pocketData.data,
+        { ...exchangeRatesData.data.rates, EUR: 1 },
+      ),
+    ).toEqual(false);
+  });
+
+  it('isValidPocketConversion with lesser than pocket amount for conversion', () => {
+    expect(
+      isValidPocketConversion(
+        { currency: 'GBP', amount: 10 },
+        pocketContent,
+        pocketData.data,
+        { ...exchangeRatesData.data.rates, EUR: 1 },
+      ),
+    ).toEqual(true);
+  });
+
+  it('isValidPocketConversion with source and destination currency same', () => {
+    expect(
+      isValidPocketConversion(pocketContent, pocketContent, pocketData.data, {
+        ...exchangeRatesData.data.rates,
+        EUR: 1,
+      }),
+    ).toEqual(false);
+  });
+
+  it('isValidPocketConversion with no amount for conversion', () => {
+    expect(
+      isValidPocketConversion(
+        { currency: 'GBP', amount: 0 },
+        pocketContent,
+        pocketData.data,
+        { ...exchangeRatesData.data.rates, EUR: 1 },
+      ),
+    ).toEqual(false);
+  });
 });

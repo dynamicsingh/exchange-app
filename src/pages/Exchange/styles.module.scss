@@ -1,0 +1,59 @@
+@import 'shared/styles/variables.module';
+
+.container {
+  position: relative;
+}
+.toastContainer {
+  position: absolute !important;
+  top: 0 !important;
+}
+.btn {
+  width: 90%;
+}
+.iconContainer {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  border: 1px solid $border-grey;
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  align-items: center;
+  left: 18px;
+  top: -12px;
+  background: $white;
+  cursor: pointer;
+  &:hover {
+    background: darken($white, 5%);
+  }
+}
+.icon {
+  width: 12px;
+  height: 12px;
+  fill: $link-blue;
+}
+
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 18px 12px;
+  h4 {
+    font-family: $openSans;
+  }
+}
+.footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 12px 12px;
+  background: $bg-light-grey;
+  border-radius: 0 0 12px 12px;
+}
+
+.liveRateContainer {
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  width: 100%;
+}

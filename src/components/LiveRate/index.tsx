@@ -2,10 +2,11 @@ import React, { FC, memo } from 'react';
 import styles from './styles.module.scss';
 import { Currency } from '../Currency';
 import { Icon as TradeIcon } from 'shared/icons/trade';
+import { CurrencyCode } from 'models/pockets';
 
 type Props = {
-  fromCurrency: any;
-  toCurrency: any;
+  fromCurrency: CurrencyCode;
+  toCurrency: CurrencyCode;
   conversionRate: number;
 };
 

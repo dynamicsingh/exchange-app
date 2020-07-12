@@ -1,8 +1,9 @@
 import React, { FC, memo } from 'react';
 import { getCurrencySymbol } from 'shared/utils/currency';
+import { CurrencyCode } from 'models/pockets';
 
 type Props = {
-  currency: any;
+  currency: CurrencyCode;
   amount: number;
   precision?: number;
   qaIdPrefix?: string;
