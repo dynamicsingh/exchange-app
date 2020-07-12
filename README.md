@@ -12,6 +12,7 @@
     * If the amount in source is less than pocket amount of that currency.
     * If the source and destination currency are different.
     * If we have the exchange rate for both currencies
+    * A valid transaction shows a success notification updating the balances in both source and destination currency pocket.
 
 
 ![](./doc-assets/appScreen.png)  
