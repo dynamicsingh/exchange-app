@@ -10,3 +10,13 @@ export const calculateExchangeRate = (
   if (!fromRate || !toRate) return -1;
   return toRate / fromRate;
 };
+
+export const getExchangeAmount = (
+  toCurrency: string,
+  amount: number,
+  fromCurrency: string,
+  exchangeRates: ExchangeRate,
+): number => {
+  let rate = calculateExchangeRate(fromCurrency, toCurrency, exchangeRates);
+  return Number((amount * rate).toFixed(2));
+};

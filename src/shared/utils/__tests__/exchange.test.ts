@@ -1,5 +1,5 @@
 import {
-  calculateExchangeRate,
+  calculateExchangeRate, getExchangeAmount,
 } from '../exchange';
 import { exchangeRatesData } from '../mockData';
 
@@ -18,4 +18,14 @@ describe('exchange utils', () => {
       calculateExchangeRate('GBP', 'EUR', { ...exchangeRatesData.data.rates }),
     ).toEqual(-1);
   });
+
+  it('getExchangeAmount', () => {
+    expect(
+      getExchangeAmount('GBP', 3000, 'EUR', {
+        ...exchangeRatesData.data.rates,
+        EUR: 1,
+      }),
+    ).toEqual(2687.1);
+  });
+
 });
