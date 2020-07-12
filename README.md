@@ -1,44 +1,51 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Features of the Exchange app
+1. User has three currency pockets EUR, GBP, USD and their respective balances, we are using initial balances for this app
+    * In real scenario, we can fetch those from backend.
+2. User can exchange with source and destination currency types using any of the currency pocket balance to transact.
+    * User can type the amount in source pocket and see the amount in destination pocket or visa versa according to the live rate.
+    * If the amount in source pocket is greater than the pocket balance for that currency, an error is shown i.e exceeds balance.
+    * User can switch/swap the source and destination currency types using a switch/swap button.
+    * We took an assumption that our app doesn't allow user to transfer more than 999,999,999.99 due to government regulations.
+3. Exchange rate is fetched using free api https://api.exchangeratesapi.io and for demo purspose we update it every 10 seconds to let user exchange currencies at almost live rate.
+    * Live exchage rate in regard to source and destination exchange currency is shown in the middle of the screen.
+4. Can do a valid transaction
+    * If the amount in source is less than pocket amount of that currency.
+    * If the source and destination currency are different.
+    * If we have the exchange rate for both currencies
 
-## Available Scripts
 
-In the project directory, you can run:
+![](./doc-assets/appScreen.png)  
+    
 
-### `yarn start`
+## Development considerations
+1. The project uses typescript with a flat folder structure to make the application simple.
+2. Uses react hooks and leverage the functional programming paradigm.
+2. Almost every component, action creator, reducer, hook, util has a unit test suite or integration test suite.
+    * 14 test suits with 49 tests for the different areas of the application.
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+![](./doc-assets/test-results.png)  
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
 
-### `yarn test`
+## Packages/dependencies being used
+Please check `package.json` file for the list of dependencies
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Main technologies being used
+1. React with Typescript
+2. Redux with redux-thunk 
+3. React Testing Library with jest
 
-### `yarn build`
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Important steps for running the app
+##### Step1: For dev setup `yarn`
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+##### Step2: To start the app `yarn start`
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Important commands
 
-### `yarn eject`
+##### To test the app `yarn test`
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+##### To build the app `yarn build`
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+**Note**: the app runs on node 12.x and yarn 1.x
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
