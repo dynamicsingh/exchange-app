@@ -40,4 +40,10 @@ export const completeState: RootState = {
     error: null,
     data: { ...exchangeRatesData.data.rates, EUR: 1 },
   },
+  pockets: {
+    loading: false,
+    error: null,
+    success: null,
+    data: pocketData.data,
+  },
 };

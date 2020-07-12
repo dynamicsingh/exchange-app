@@ -1,0 +1,71 @@
+@import 'shared/styles/variables.module';
+@import 'shared/styles/variables.module';
+@import 'shared/styles/mixins.module';
+
+.container {
+  height: 250px;
+  display: flex;
+  flex-direction: column;
+  padding: 6px 24px;
+  justify-content: center;
+  border-radius: 12px 12px 0 0;
+  &.destination {
+    background: $bg-light-grey;
+    border-radius: 0;
+  }
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+}
+
+//dev note: avoid !important here, but here its required to override the react free dropdown package
+.selectWrapper {
+  min-width: 90px !important;
+}
+
+.select {
+  border: 0 !important;
+  font-size: 24px !important;
+  font-family: $roboto;
+  width: 90px !important;
+  color: $dark-grey !important;
+}
+
+.grey {
+  background: $bg-light-grey !important;
+}
+
+.selectOption {
+  font-size: 16px !important;
+  font-family: $roboto;
+  background: $white;
+}
+
+.pocketBalance {
+  @include font(medium);
+  color: $grey-text;
+  margin: 8px 5px 0 5px;
+}
+
+.exceeds {
+  color: $grey-text;
+}
+
+.minus:before {
+  content: '-';
+  @include font(xLarge);
+}
+
+.plus:before {
+  content: '+';
+  @include font(xLarge);
+}
+.smallSize:before {
+  @include font(large);
+}
+.bigNumber {
+  @include font(large);
+  width: 135px;
+}
