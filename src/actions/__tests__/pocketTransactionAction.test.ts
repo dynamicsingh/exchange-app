@@ -19,7 +19,7 @@ describe('pocket Transaction Actions', () => {
       },
     ];
 
-    const store = mockStore({ themes: {} });
+    const store = mockStore({ pockets: {} });
 
     return store
       .dispatch(doPocketTransaction(pocketTransactionPayload) as AnyAction)
